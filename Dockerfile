@@ -16,7 +16,7 @@ RUN cargo build --release --target "$(arch)-unknown-linux-musl" --bin rds_proxy 
 
 FROM alpine:3.18.5 AS runtime
 RUN addgroup -S rdsproxy && adduser -S rdsproxy -G rdsproxy
-RUN adduser -S root -G rdsproxy
+#RUN adduser -S root -G rdsproxy
 
 RUN apk add busybox-extras # add telnet
 RUN apk --update add postgresql-client # add postgres client
